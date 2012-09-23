@@ -1,16 +1,31 @@
 <!DOCTYPE HTML>
 <html>
+<!-- Anthony J. Stanczyk
+     Introduction to Programming
+     9/26/2012
+     Project 2 - Game v0.2 -->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 		<meta name="author" content="Anthony Stanczyk"/>
 		<title>Furiously Fast</title>
-		<style>
+		<style type="text/css">
 			body {
-			margin:50px 0px; padding:0px;
 			text-align:center;
-			}
+			background-image:url('http://wallpaper.goodfon.com/image/133493-1920x1200.jpg'); 
+      background-color: black;}
+			
+			#btn {
+			border: 1px solid #FCFCFC;
+			background: #C60968;
+			color: #FCFCFC;
+			font: bold 12px 'Calibri';
+			padding: 5px;
+			cursor: pointer;}
+			
+			h1 {color: #C60968;
+			font: bold 72px 'Terminal';}
 		</style>
-		<script>
+		<script type="javascript">
 			function north_btn_onclick() {
 				var message="1";
 				alert(message);
@@ -30,39 +45,47 @@
 				var message="4";
 				alert(message)
 			}
-			
 		</script>
 	</head>
 <body>
-	<br>
+	<h1>
+    Furiously Fast
+	</h1>
 	<p>
+	<br>
+	<br>
+	<br>
+	<br>
 		<textarea wrap="off" cols="30" rows="5">
 Text text text
 		</textarea>
 	<p>
-	<input  type="button"
+	<input  type="button" id="btn"
           value="North"
           onclick="north_btn_onclick();">
 			
-	<input  type="button"
+	<input  type="button" id="btn"
           value="South"
           onclick="south_btn_onclick();">
 			
-	<input  type="button"
+	<input  type="button" id="btn"
           value="East"
           onclick="east_btn_onclick();">
 			
-	<input  type="button"
+	<input  type="button" id="btn"
           value="West"
           onclick="west_btn_onclick();">
 
-	<input  type="button"
-          value="Score?"
+	<input  type="button" id="btn"
+          value="Score"
           onclick="score_btn_onclick();">
-
 	</p>
 	<p>
-		<a href = "mailto:Anthony.Stanczyk1@marist.edu">E-mail Me!</a>
+	<br>
+	<br>
+		<a href = "mailto:Anthony.Stanczyk1@marist.edu">
+		<img src="http://lazytechguys.zippykidcdn.com/wp-content/uploads/2012/04/Cracked-Gmail-Logo-Black-Background.png" width="150" height="90" alt = "E-mail me!"/></a>
+		<img src="http://i62.photobucket.com/albums/h94/hotspoons/STi.png" width="200" height="120" style="position:absolute; float:left; left:0px; bottom:0px; z-index:2;">
 	</p>
 </body>
 </html>
