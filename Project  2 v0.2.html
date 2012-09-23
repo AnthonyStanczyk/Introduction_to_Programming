@@ -8,24 +8,70 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 		<meta name="author" content="Anthony Stanczyk"/>
 		<title>Furiously Fast</title>
-		<style type="text/css">
+		<style>
 			body {
-			text-align:center;
-			background-image:url('http://wallpaper.goodfon.com/image/133493-1920x1200.jpg'); 
-      background-color: black;}
+        text-align:center;
+        background-image:url('http://wallpaper.goodfon.com/image/133493-1920x1200.jpg'); 
+        background-color: black;
+      }
+      
+      #taGame {
+        font: 18px 'Terminal';
+        border: 2px solid #C60968;
+        background: url(http://i1247.photobucket.com/albums/gg621/DrunkenPengu1n/white_zps2a5f2e64.png) center center no-repeat;
+      }
 			
-			#btn {
-			border: 1px solid #FCFCFC;
-			background: #C60968;
-			color: #FCFCFC;
-			font: bold 12px 'Calibri';
-			padding: 5px;
-			cursor: pointer;}
+			#btn1 {
+        border: 1px solid #FCFCFC;
+        background: #C60968;
+        color: #FCFCFC;
+        font: 14px 'Terminal';
+        padding: 5px;
+        cursor: pointer;
+			}
+			
+			#btn2 {
+        border: 1px solid #FCFCFC;
+        background: #C60968;
+        color: #FCFCFC;
+        font: 14px 'Terminal';
+        padding: 5px;
+        cursor: pointer;
+			}
+			
+			#btn3 {
+        border: 1px solid #FCFCFC;
+        background: #C60968;
+        color: #FCFCFC;
+        font: 14px 'Terminal';
+        padding: 5px;
+        cursor: pointer;
+			}
+			
+			#btn4 {
+        border: 1px solid #FCFCFC;
+        background: #C60968;
+        color: #FCFCFC;
+        font: 14px 'Terminal';
+        padding: 5px;
+        cursor: pointer;
+			}
+			
+			#btn5 {
+        border: 1px solid #FCFCFC;
+        background: #C60968;
+        color: #FCFCFC;
+        font: 14px 'Terminal';
+        padding: 5px;
+        cursor: pointer;
+			}
 			
 			h1 {color: #C60968;
-			font: bold 72px 'Terminal';}
+        font: bold 72px 'Terminal';
+			}
+			
 		</style>
-		<script type="javascript">
+		<script>
 			function north_btn_onclick() {
 				var message="1";
 				alert(message);
@@ -56,36 +102,41 @@
 	<br>
 	<br>
 	<br>
-		<textarea wrap="off" cols="30" rows="5">
+		<textarea id="taGame" cols="40" rows="10">
 Text text text
 		</textarea>
 	<p>
-	<input  type="button" id="btn"
+	<input  type="button" 
           value="North"
-          onclick="north_btn_onclick();">
+          onclick="north_btn_onclick();"
+          id="btn1">
 			
-	<input  type="button" id="btn"
+	<input  type="button" 
           value="South"
-          onclick="south_btn_onclick();">
+          onclick="south_btn_onclick();"
+          id="btn2">
 			
-	<input  type="button" id="btn"
+	<input  type="button" 
           value="East"
-          onclick="east_btn_onclick();">
+          onclick="east_btn_onclick();"
+          id="btn3">
 			
-	<input  type="button" id="btn"
+	<input  type="button" 
           value="West"
-          onclick="west_btn_onclick();">
+          onclick="west_btn_onclick();"
+          id="btn4">
 
-	<input  type="button" id="btn"
+	<input  type="button" 
           value="Score"
-          onclick="score_btn_onclick();">
+          onclick="score_btn_onclick();"
+          id="btn5">
 	</p>
 	<p>
 	<br>
 	<br>
 		<a href = "mailto:Anthony.Stanczyk1@marist.edu">
-		<img src="http://lazytechguys.zippykidcdn.com/wp-content/uploads/2012/04/Cracked-Gmail-Logo-Black-Background.png" width="150" height="90" alt = "E-mail me!"/></a>
-		<img src="http://i62.photobucket.com/albums/h94/hotspoons/STi.png" width="200" height="120" style="position:absolute; float:left; left:0px; bottom:0px; z-index:2;">
+		<img src="http://lazytechguys.zippykidcdn.com/wp-content/uploads/2012/04/Cracked-Gmail-Logo-Black-Background.png" width="150" height="90" alt="E-mail me!"/></a>
+		<img src="http://i62.photobucket.com/albums/h94/hotspoons/STi.png" width="200" height="120" style="position:absolute; float:left; left:0px; bottom:0px; z-index:2;" alt="STi Logo">
 	</p>
 </body>
 </html>
