@@ -17,7 +17,7 @@
       
       #taGame {
         font: 18px 'Terminal';
-        border: 2px solid #C60968;
+        border: 4px solid #C60968;
         background: url(http://i1247.photobucket.com/albums/gg621/DrunkenPengu1n/white_zps2a5f2e64.png) center center no-repeat;
       }
 			
@@ -72,71 +72,93 @@
 			
 		</style>
 		<script>
+      var score = 0;
+      
 			function north_btn_onclick() {
-				var message="1";
-				alert(message);
+				var message = "1";
+				updateText(message);
+          if (score < 5) {
+            score += 5;
+          } else {
+              score += 0;
+          }  
 			}
 			
 			function south_btn_onclick() {
-				var message="2";
-				alert(message)
+				var message = "2";
+				updateText(message);
+          if (score < 5) {
+            score += 5;
+          } else {
+              score += 0;
+          }  
 			}
 			
 			function east_btn_onclick() {
-				var message="3";
-				alert(message)
+				var message = "3";
+				updateText(message);
+				score += 5;
 			}
 			
 			function west_btn_onclick() {
-				var message="4";
-				alert(message)
+				var message = "4";
+				updateText(message);
+				score += 5;
 			}
+			
+			function score_btn_onclick() {
+        alert(score);
+      }
+      
+      function updateText(message) {
+        var ta = document.getElementById("taGame");
+        ta.value = message + "\n" + ta.value;
+      }
 		</script>
 	</head>
-<body>
-	<h1>
-    Furiously Fast
-	</h1>
-	<p>
-	<br>
-	<br>
-	<br>
-	<br>
-		<textarea id="taGame" cols="40" rows="10">
-Text text text
-		</textarea>
-	<p>
-	<input  type="button" 
-          value="North"
-          onclick="north_btn_onclick();"
-          id="btn1">
-			
-	<input  type="button" 
-          value="South"
-          onclick="south_btn_onclick();"
-          id="btn2">
-			
-	<input  type="button" 
-          value="East"
-          onclick="east_btn_onclick();"
-          id="btn3">
-			
-	<input  type="button" 
-          value="West"
-          onclick="west_btn_onclick();"
-          id="btn4">
+  <body>
+    <h1>
+      Furiously Fast
+    </h1>
+    <p>
+    <br>
+    <br>
+    <br>
+    <br>
+      <textarea id="taGame" cols="40" rows="10">Text text text
+      </textarea>
+    <p>
+    <input  type="button" 
+            value="North"
+            onclick="north_btn_onclick();"
+            id="btn1">
+        
+    <input  type="button" 
+            value="South"
+            onclick="south_btn_onclick();"
+            id="btn2">
+        
+    <input  type="button" 
+            value="East"
+            onclick="east_btn_onclick();"
+            id="btn3">
+        
+    <input  type="button" 
+            value="West"
+            onclick="west_btn_onclick();"
+            id="btn4">
 
-	<input  type="button" 
-          value="Score"
-          onclick="score_btn_onclick();"
-          id="btn5">
-	</p>
-	<p>
-	<br>
-	<br>
-		<a href = "mailto:Anthony.Stanczyk1@marist.edu">
-		<img src="http://lazytechguys.zippykidcdn.com/wp-content/uploads/2012/04/Cracked-Gmail-Logo-Black-Background.png" width="150" height="90" alt="E-mail me!"/></a>
-		<img src="http://i62.photobucket.com/albums/h94/hotspoons/STi.png" width="200" height="120" style="position:absolute; float:left; left:0px; bottom:0px; z-index:2;" alt="STi Logo">
-	</p>
-</body>
+    <input  type="button" 
+            value="Score"
+            onclick="score_btn_onclick();"
+            id="btn5">
+    </p>
+    <p>
+    <br>
+    <br>
+      <a href="mailto:Anthony.Stanczyk1@marist.edu">
+      <img src="http://lazytechguys.zippykidcdn.com/wp-content/uploads/2012/04/Cracked-Gmail-Logo-Black-Background.png" width="150" height="90" alt="E-mail me!"/></a>
+      <img src="http://i62.photobucket.com/albums/h94/hotspoons/STi.png" width="200" height="120" style="position:absolute; float:left; left:0px; bottom:0px; z-index:2;" alt="STi Logo">
+    </p>
+  </body>
 </html>
