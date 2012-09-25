@@ -16,7 +16,7 @@
       }
       
       #taGame {
-        font: 18px 'Terminal';
+        font-family: Agency FB;
         border: 4px solid #C60968;
         background: url(http://i1247.photobucket.com/albums/gg621/DrunkenPengu1n/white_zps2a5f2e64.png) center center no-repeat;
       }
@@ -25,7 +25,7 @@
         border: 1px solid #FCFCFC;
         background: #C60968;
         color: #FCFCFC;
-        font: 14px 'Terminal';
+        font: 14px 'Agency FB';
         padding: 5px;
         cursor: pointer;
 			}
@@ -34,7 +34,7 @@
         border: 1px solid #FCFCFC;
         background: #C60968;
         color: #FCFCFC;
-        font: 14px 'Terminal';
+        font: 14px 'Agency FB';
         padding: 5px;
         cursor: pointer;
 			}
@@ -43,7 +43,7 @@
         border: 1px solid #FCFCFC;
         background: #C60968;
         color: #FCFCFC;
-        font: 14px 'Terminal';
+        font: 14px 'Agency FB';
         padding: 5px;
         cursor: pointer;
 			}
@@ -52,7 +52,7 @@
         border: 1px solid #FCFCFC;
         background: #C60968;
         color: #FCFCFC;
-        font: 14px 'Terminal';
+        font: 14px 'Agency FB';
         padding: 5px;
         cursor: pointer;
 			}
@@ -61,53 +61,64 @@
         border: 1px solid #FCFCFC;
         background: #C60968;
         color: #FCFCFC;
-        font: 14px 'Terminal';
+        font: 14px 'Agency FB';
         padding: 5px;
         cursor: pointer;
 			}
 			
 			h1 {color: #C60968;
-        font: bold 72px 'Terminal';
+        font: bold 72px 'Agency FB';
 			}
 			
 		</style>
 		<script>
-      var score = 0;
+      var north_score = 0;
+      var south_score = 0;
+      var east_score= 0;
+      var west_score= 0;
       
 			function north_btn_onclick() {
 				var message = "1";
 				updateText(message);
-          if (score < 5) {
-            score += 5;
+          if (north_score < 5) {
+            north_score += 5;
           } else {
-              score += 0;
+              north_score += 0;
           }  
 			}
 			
 			function south_btn_onclick() {
 				var message = "2";
 				updateText(message);
-          if (score < 5) {
-            score += 5;
+          if (south_score < 5) {
+            south_score += 5;
           } else {
-              score += 0;
+              south_score += 0;
           }  
 			}
 			
 			function east_btn_onclick() {
 				var message = "3";
 				updateText(message);
-				score += 5;
+           if (east_score < 5) {
+            east_score += 5;
+          } else {
+              east_score += 0;
+          }  
 			}
 			
 			function west_btn_onclick() {
 				var message = "4";
 				updateText(message);
-				score += 5;
+           if (west_score < 5) {
+             west_score += 5;
+           } else {
+               west_score += 0;
+           }  
 			}
 			
 			function score_btn_onclick() {
-        alert(score);
+        alert(north_score+south_score+east_score+west_score);
       }
       
       function updateText(message) {
@@ -125,7 +136,7 @@
     <br>
     <br>
     <br>
-      <textarea id="taGame" cols="40" rows="10">Text text text
+      <textarea id="taGame" cols="60" rows="9">Text text text
       </textarea>
     <p>
     <input  type="button" 
