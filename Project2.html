@@ -77,7 +77,7 @@
       var west_score= 0;
       
 			function north_btn_onclick() {
-				var message = "You are in an abandoned parking with orange traffic cones outlining a course.  Spectators are cheering on an autocross event.";
+				var message = "You are at the police impound lot where your car is being held in captivity.  The ransom is too much for you right now.       ";
 				updateText(message);
           if (north_score < 5) {
             north_score += 5;
@@ -87,7 +87,7 @@
 			}
 			
 			function south_btn_onclick() {
-				var message = "You are in the lot of a used car dealership.  You see a small auto parts store to the East.";
+				var message = "You are at the lot of a used car dealership.  Everything here is too expensive for you right now, though.  Maybe you should get a job.  You see a small auto parts store to the East.        ";
 				updateText(message);
           if (south_score < 5) {
             south_score += 5;
@@ -97,7 +97,7 @@
 			}
 			
 			function east_btn_onclick() {
-				var message = "You are at the front door of an auto parts store.  You notice a help wanted sign on the window and performance tuning equipment in the back.";
+				var message = "You are at the front door of an auto parts store.  You notice a help wanted sign on the window and performance tuning equipment in the back.       ";
 				updateText(message);
            if (east_score < 5) {
             east_score += 5;
@@ -107,7 +107,7 @@
 			}
 			
 			function west_btn_onclick() {
-				var message = "You are at the police impound lot where your car is being held in captivity.";
+				var message = "You are in an abandoned parking lot with orange traffic cones outlining a course.  Spectators are cheering on an autocross event.  You would love to participate, but you are lacking a car.       ";
 				updateText(message);
            if (west_score < 5) {
              west_score += 5;
@@ -135,7 +135,7 @@
     <br>
     <br>
     <br>
-      <textarea id="taGame" cols="60" rows="9">You are standing in front of a police station, south of an abandoned parking lot.  You have just been released after serving your sentence for street racing and other related infractions.
+      <textarea id="taGame" cols="60" rows="9">You are standing in front of a police station, south of the police impound lot.  You have just been released after serving your sentence for street racing and other related infractions.  Your car has been impounded, and you don't have a penny to your name.
       </textarea>
     <p>
     <input  type="button" 
