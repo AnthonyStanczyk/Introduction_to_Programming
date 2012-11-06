@@ -223,7 +223,9 @@
         if (playerHasRope) {
           message = message + "Rope ";
           updateText(message);
-        } 
+        } else {
+          updateText("You don't have anything.");
+        }
       }
 
       function btn_go_click() {
