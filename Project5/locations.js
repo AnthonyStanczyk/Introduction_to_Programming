@@ -1,14 +1,16 @@
       //Item prototype.
-      function makeItem(_id, _name, _desc) {
+      function makeItem(_id, _name, _desc, _truth) {
         this.id       = _id;
         this.name     = _name;
         this.desc     = _desc;
+        this.truth    = _truth;
         this.toString = function() {
           var retVal = "";
           retVal = "[makeItem]" + "\n" +
-                   "id:"   + this.id   +"\n" +
-                   "name:" + this.name +"\n" +
-                   "desc:" + this.desc +"\n";
+                   "id:"    + this.id   +"\n" +
+                   "name:"  + this.name +"\n" +
+                   "desc:"  + this.desc +"\n" +
+                   "truth:" + this.truth +"\n";
           return retVal;
         }
       }
@@ -40,6 +42,9 @@
           updateDisplay(locales[0].desc);
           score = score + 10;
           document.getElementById("score").innerHTML = score;
+        if (!items[0].truth) {
+          updateText(items[0].desc);
+        }
       }
             
       function _natives() {
@@ -58,13 +63,16 @@
             updateDisplay(locales[3].desc);
             score = score + 10;
             document.getElementById("score").innerHTML = score;
+          if (!items[1].truth) {
+            updateText(items[1].desc);
+          }
       }
           
       function _jungle() {
             updateDisplay(locales[4].desc);
             score = score + 10;
             document.getElementById("score").innerHTML = score;
-          if (!playerHasRope) {
+          if (!items[2].truth) {
             updateText(items[2].desc);
           }
       }
@@ -73,13 +81,16 @@
             updateDisplay(locales[5].desc);
             score = score + 10;
             document.getElementById("score").innerHTML = score;
+          if (!items[3].truth) {
+            updateText(items[3].desc);
+          }
       }
             
       function _ruins() {
             updateDisplay(locales[6].desc);
             score = score + 10;
             document.getElementById("score").innerHTML = score;
-          if (playerHasRope) {
+          if (items[2].truth) {
             alert("You use the rope to climb to the top of the ruins. A passing helicopter spots you and carries you to safety.");
           }
       }

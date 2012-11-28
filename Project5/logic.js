@@ -3,12 +3,6 @@
       
       //Starting score.
       var score = 0; 
-      
-      //Item handling.
-      var playerHasLighter = false;
-      var playerHasFish = false;
-      var playerHasRope = false;
-      var playerHasSpear = false;
 
       function change(location) {
         switch(location) {
@@ -207,36 +201,54 @@
       function init() {
         var message = "Your plane has just crashed somewhere over the Pacific Ocean, but you survived with minor injuries. You are at the site of the crash, and there are bits of the wreckage everywhere. Make your move.";
         updateText(message);
-        locales[0] = new locale (0, "Beach", "You are on the beach, at the site of the plane crash.", "None");
+        locales[0] = new locale (0, "Beach", "You are on the beach, at the site of the plane crash.", "Lighter");
         locales[1] = new locale (1, "Natives", "You aren't alone, since you just found a hunting party of the island's natives. They have spears, they're hungry, and they look angry.", "None");
         locales[2] = new locale (2, "Volcano", "You are at the mouth of an active volcano. It's extremely hot.", "None");
-        locales[3] = new locale (3, "Pool", "You found a clear pool with a waterfall flowing into it. It's teeming with fish. They are quite speedy.", "None");
+        locales[3] = new locale (3, "Pool", "You found a clear pool with a waterfall flowing into it. It's teeming with fish. They are quite speedy.", "Fish");
         locales[4] = new locale (4, "Jungle", "You are in the island's dense jungle.", "Rope");
-        locales[5] = new locale (5, "Cave", "You found a dark, spooky cave.", "None");
+        locales[5] = new locale (5, "Cave", "You found a dark, spooky cave.", "Spear");
         locales[6] = new locale (6, "Ruins", "You found the ruins where the natives live, and it's protected by guards. This is also the island's highest point. A rope may be useful here.", "None");
         locales[7] = new locale (7, "Quicksand", "You have stumbled onto a large pit of quicksand. Act fast if you want to live!", "None");
         locales[8] = new locale (8, "Rocks", "You are at the base of some sharp, jagged rocks. There doesn't seem to be anything here.", "None");
         locales[9] = new locale (9, "Spikes", "You fell into one of the native's spike traps and died. Please refresh the browser to continue.", "None");
-        items[0] = new makeItem (0, "Lighter", "You see a lighter amongst the wreckage.");
-        items[1] = new makeItem (1, "Fish", "You found a tasty fish.");
-        items[2] = new makeItem (2, "Rope", "You see a rope made of vines hanging from a tree.");
-        items[3] = new makeItem (3, "Spear", "You found a spear left behind by one of the natives.");
+        items[0] = new makeItem (0, "Lighter", "You see a lighter amongst the wreckage.", false);
+        items[1] = new makeItem (1, "Fish", "You found a tasty fish.", false);
+        items[2] = new makeItem (2, "Rope", "You see a rope made of vines hanging from a tree.", false);
+        items[3] = new makeItem (3, "Spear", "You found a spear left behind by one of the natives.", false);
       }
       
-      function takeItem() {
+      function takeItem(){
         if (currentLocation === 4) {
-          playerHasRope = true;
+          items[2].truth = true;
+          updateText("Taken.");
+        } else if (currentLocation === 0) {
+          items[0].truth = true;
+          updateText("Taken.");
+        } else if (currentLocation === 3) {
+          items[1].truth = true;
+          updateText("Taken.");
+        } else if (currentLocation === 5) {
+          items[3].truth = true;
           updateText("Taken.");
         } else {
           updateText("There is nothing here.");
         }
       }
           
-      function displayInventory () {
+      function displayInventory(){
         var message = "Inventory: ";
-        if (playerHasRope) {
-          message = message + "Rope ";
+        if (items[0].truth === true) {
+          message = message + items[0].name;
           updateText(message);
+        } else if (items[1].truth === true) {
+          message = message + items[1].name;
+          updateText(message);
+        } else if (items[2].truth === true) {
+          message = message + items[2].name;
+          updateText(message);
+        } else if (items[3].truth === true) {
+          message = message + items[3].name;
+          updateText(message);   
         } else {
           updateText("You don't have anything.");
         }
