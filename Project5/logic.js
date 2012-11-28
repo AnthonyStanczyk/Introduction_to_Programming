@@ -236,19 +236,19 @@
       }
           
       function displayInventory(){
-        if (items[0].truth === true) {
+         if (items[0].truth === true) {
           updateText(items[0].name);
-        } else if (items[1].truth === true) {
+         } else if (items[1].truth === true) {
           updateText(items[1].name);
-        } else if (items[2].truth === true) {
+         } else if (items[2].truth === true) {
           updateText(items[2].name);
-        } else if (items[3].truth === true) {
+         } else if (items[3].truth === true) {   
           updateText(items[3].name);
-        } else {
-          updateText("You don't have anything.");
-        }
+         } else {
+           updateText("You don't have anything.");
+         }
       }
-      
+
       function txtCommand_keypress(e){
         if (e.which === 13) {
           document.getElementById("btnGo").onclick();
