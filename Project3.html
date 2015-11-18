@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Anthony J. Stanczyk
+     Introduction to Programming
+     10/24/12
+     Project 3 - Game v0.3 -->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta name="author" content="Anthony Stanczyk"/>
+		<title>Found</title>
+		<style>
+			body {
+        text-align:center;
+        background-image:url('http://t.wallpaperweb.org/wallpaper/nature/1920x1080/Raja_Empat_Island_Group_Indonesia.jpg'); 
+        background-color: black;
+      }
+      
+      #taGame {
+        font: 18px 'Agency FB';
+        border: 4px solid #68c3d8;
+      }
+      
+      #btnGo {
+        border: 1px solid #FCFCFC;
+        background: #68c3d8;
+        color: #FCFCFC;
+        font: 14px 'Agency FB';
+        padding: 7px;
+        cursor: pointer;
+			}
+			
+			#btnScore {
+        border: 1px solid #FCFCFC;
+        background: #68c3d8;
+        color: #FCFCFC;
+        font: 14px 'Agency FB';
+        padding: 5px;
+        cursor: pointer;
+			}
+			
+			h1 {color: #4d6b87;
+        font: bold 72px 'Agency FB';
+			}
+			
+		</style>
+		<script>  
+      //Variables for determining player movement.
+      var NORTH = 1; 
+      var SOUTH = 2;
+      var EAST = 3;
+      var WEST = 4;
+      
+      //Starting location.
+      var currentLocation = 0; 
+      
+      //Starting score.
+      var score = 0; 
+      
+      function btnGo(direction) {
+        if (direction === NORTH) {
+         figure_out_where_north_goes();
+          if (currentLocation === 0) {
+           var message = "Your plane has just crashed somewhere over the Pacific Ocean, but you survied with minor injuries. You are at the site of the crash, and there are bits of the wreckage everywhere. Are you alone?";
+           updateDisplay(message);
+           }
+          if (currentLocation === 1) {
+           var message = "You aren't alone, since you just found a hunting party of the island's natives. They have spears, they're hungry, and they look angry.";
+           updateDisplay(message);
+           }
+          if (currentLocation === 3) {
+           var message = "You found a clear pool with a waterfall flowing into it. It's teeming with fish. They are quite speedy. If you want to catch fish, you'll need a spear.";
+           updateDisplay(message);
+           }
+          score = score + 10;
+         } else if (direction === SOUTH) {
+            figure_out_where_south_goes();
+             if (currentLocation === 0) {
+              var message = "Your plane has just crashed somewhere over the Pacific Ocean, but you survied with minor injuries. You are at the site of the crash, and there are bits of the wreckage everywhere. Are you alone?";
+              updateDisplay(message);
+              }
+             if (currentLocation === 3) {
+              var message = "You found a clear pool with a waterfall flowing into it. It's teeming with fish. They are quite speedy. If you want to eat, you'll need a spear.";
+              updateDisplay(message);
+              }
+             if (currentLocation === 5) {
+              var message = "You found a dark, spooky cave. A native's spear is propped up against its entrance. A torch is needed to explore.";
+              updateDisplay(message);
+              }
+            score = score + 10
+         } else if (direction === EAST) { 
+            figure_out_where_east_goes();
+             if (currentLocation === 0) {
+              var message = "Your plane has just crashed somewhere over the Pacific Ocean, but you survied with minor injuries. You are at the site of the crash, and there are bits of the wreckage everywhere. Are you alone?";
+              updateDisplay(message);
+              }
+             if (currentLocation === 2) {
+              var message = "You found the ruins where the natives live, and it's protected by guards. This is also the island's highest point. You need a rope to climb to the top.";
+              updateDisplay(message);
+              }
+            score = score + 10;
+         } else if (direction === WEST) {
+            figure_out_where_west_goes();
+             if (currentLocation === 0) {
+              var message = "Your plane has just crashed somewhere over the Pacific Ocean, but you survied with minor injuries. You are at the site of the crash, and there are bits of the wreckage everywhere. Are you alone?";
+              updateDisplay(message);
+              }
+              if (currentLocation === 4) {
+               var message = "You are in the island's dense jungle. There are dry sticks and exotic foliage everywhere.";
+               updateDisplay(message);
+               }
+              score = score + 10;
+         } 
+      }
+      
+      function figure_out_where_north_goes() {
+        if (currentLocation === 0) {
+            currentLocation = 1;
+            btnNorth.disabled = true;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 5) {
+            currentLocation = 3;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 3) {
+            currentLocation = 0;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 2) {
+            currentLocation = 1;
+            btnNorth.disabled = true;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 4) {
+            currentLocation = 0
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         }
+      }
+        
+      function figure_out_where_south_goes() {
+        if (currentLocation === 1) {
+            currentLocation = 0;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 0) {
+            currentLocation = 3;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 3) {
+            currentLocation = 5;
+            btnNorth.disabled = false;
+            btnSouth.disabled = true;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 2) {
+            currentLocation = 3;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 4) {
+            currentLocation = 3;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         }
+      }
+      
+      function figure_out_where_east_goes() {
+        if (currentLocation === 0) {
+            currentLocation = 2;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = true;
+            btnWest.disabled = false;
+         } else if (currentLocation === 1) {
+            currentLocation = 2;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = true;
+            btnWest.disabled = false;
+         } else if (currentLocation === 3) {
+            currentLocation = 2;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = true;
+            btnWest.disabled = false;
+         } else if (currentLocation === 5) {
+            currentLocation = 2;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = true;
+            btnWest.disabled = false;
+         } else if (currentLocation === 4) {
+            currentLocation = 0;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         }
+      }
+      
+      function figure_out_where_west_goes() {
+        if (currentLocation === 0) {
+            currentLocation = 4;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = true;
+         } else if (currentLocation === 1) {
+            currentLocation = 4;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = true;
+         } else if (currentLocation === 2) {
+            currentLocation = 0;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = false;
+         } else if (currentLocation === 3) {
+            currentLocation = 4; 
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = true;
+         } else if (currentLocation === 5) {
+            currentLocation = 4;
+            btnNorth.disabled = false;
+            btnSouth.disabled = false;
+            btnEast.disabled = false;
+            btnWest.disabled = true;
+         } 
+      }
+           
+      function updateDisplay(message) {
+        message = message +" [" + currentLocation + "]"
+        var ta = document.getElementById("taGame");
+        ta.value = message + "\n" + ta.value;
+      }
+      
+      function updateScore(message) {
+        var ta = document.getElementById("taGame");
+        ta.value = message + "\n" + ta.value;
+      }
+      
+      function invalidCommand(message) {
+        var ta = document.getElementById("taGame");
+        ta.value = message + "\n" + ta.value;
+      }
+      
+      function score_btn_onclick() {
+        updateScore(score);
+      }
+      
+      function btn_go_click() {
+        var userInput = document.getElementById("txtCommand").value;
+        if ((userInput === "n")  || (userInput === "N")) {
+            btnGo(NORTH);
+            figure_out_where_north_goes();
+        } else if ((userInput === "s") || (userInput === "S")) {
+            btnGo(SOUTH);
+            figure_out_where_south_goes();
+        } else if ((userInput === "e") || (userInput === "E")) {
+            btnGo(EAST);
+            figure_out_where_east_goes();
+        } else if ((userInput === "w") || (userInput === "W")) {
+            btnGo(WEST);
+            figure_out_where_west_goes();
+        } else {
+            invalidCommand("Invalid command! Valid Commands: N,S,E,W,n,s,e,w.");
+        }
+      }
+      
+		</script>
+	</head>
+  <body>
+    <h1>
+      Found
+    </h1>
+    <p>
+      <textarea id="taGame" cols="60" rows="9">Your plane has just crashed somewhere over the Pacific Ocean, but you survied with minor injuries. You are at the site of the crash, and there are bits of the wreckage everywhere. Are you alone? [0]
+      </textarea>
+    <p>
+     <input  type="button" 
+            value="Score"
+            onclick="score_btn_onclick();"
+            id="btnScore">
+            
+    <input  type="text" 
+            id="txtCommand">
+            
+    <input  type="button"
+            value="Go!"
+            onclick="btn_go_click();"
+            id="btnGo">
+    <br>       
+    <br>            
+            
+    <input  type="button" 
+            value="North"
+            onclick="btnGo(NORTH);"
+            id="btnNorth">
+    <br>
+    <br>
+    
+    <input  type="button" 
+            value="West"
+            onclick="btnGo(WEST);"
+            id="btnWest">
+        
+    <input  type="button" 
+            value="East"
+            onclick="btnGo(EAST);"
+            id="btnEast">
+    <br>
+    <br>
+        
+     <input  type="button" 
+            value="South"
+            onclick="btnGo(SOUTH);"
+            id="btnSouth">
+      
+    <br>
+    <br>
+            
+    <a href = "mailto:Anthony.Stanczyk1@marist.edu">
+		<img src="http://www.clker.com/cliparts/9/1/4/0/11954322131712176739question_mark_naught101_02.svg.med.png" width="50" height="50" alt = "E-mail me!"/></a>
+    </p>
+  </body>
+</html>

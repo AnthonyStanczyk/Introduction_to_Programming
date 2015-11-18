@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Anthony J. Stanczyk
+     Introduction to Programming
+     11/7/12
+     Project 4 -->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta name="author" content="Anthony Stanczyk"/>
+		<link rel="stylesheet" type="text/css" href="Project5.css" media="screen"/>
+		<script type="text/javascript" src="logic.js"></script>
+		<script type="text/javascript" src="locations.js"></script>
+		<title>Found</title>
+	</head>
+  <body onload="init()">
+    <h1>
+      Found
+    </h1>
+    <p>
+      <textarea id="taGame" cols="60" rows="14"></textarea>
+      <textarea id="taMap" cols="60" rows="14" style="color: white; background-color: white"></textarea>
+    <p style="color: white;">
+    
+    Current Score: <span id="score" style = "color: white;">00</span>
+    
+    <input  type="button" 
+            value="Score"
+            onclick="score_btn_onclick();"
+            id="btnScore">
+     
+    <input  type="text" 
+            id="txtCommand"
+            onkeypress="txtCommand_keypress(event);">
+            
+    <input  type="button"
+            value="Go!"
+            onclick="btn_go_click();"
+            id="btnGo">
+     
+     Current Location:<span id = "location" style = "color: white;">0</span>
+   
+    <br>       
+    <br>                 
+    <input  type="button" 
+            value="North"
+            onclick="goNorth();"
+            id="btnNorth">
+    <br>
+    <br>   
+    <input  type="button" 
+            value="West"
+            onclick="goWest();"
+            id="btnWest">
+                   
+    <input  type="button" 
+            value="East"
+            onclick="goEast();"
+            id="btnEast">
+    <br>
+    <br>        
+     <input  type="button" 
+            value="South"
+            onclick="goSouth();"
+            id="btnSouth"> 
+            
+    <br>
+    <br>
+    
+		<a href = "mailto:Anthony.Stanczyk1@marist.edu">
+		<img src="http://www.clker.com/cliparts/9/1/4/0/11954322131712176739question_mark_naught101_02.svg.med.png" width="30" height="30" alt = "E-mail me!"/></a>
+    </p>
+  </body>
+</html>
